@@ -1,0 +1,55 @@
+<?php
+$store = Mage::app()->getStore();
+$code  = $store->getCode();
+$_item = $this->getItem();
+$isVisibleProduct = $_item->getProduct()->isVisibleInSiteVisibility();
+//$canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage_Catalog_Model_Product_Attribute_Source_Msrp_Type::TYPE_BEFORE_ORDER_CONFIRM);
+$aspect_ratio = Mage::getStoreConfig("porto_settings/category/aspect_ratio",$code);
+$ratio = 1;
+if($aspect_ratio && Mage::getStoreConfig("porto_settings/category/ratio_width",$code) > 0)
+    $ratio = Mage::getStoreConfig("porto_settings/category/ratio_height",$code)/Mage::getStoreConfig("porto_settings/category/ratio_width",$code);
+?>
+<li class="item">
+    <?php if ($this->hasProductUrl()): ?>
+        <a href="<?php echo $this->getProductUrl()?>" title="<?php echo $this->htmlEscape($this->getProductName()) ?>" class="product-image"><img src="<?php if($aspect_ratio):?><?php echo $this->getProductThumbnail()->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);?><?php else: ?><?php echo $this->getProductThumbnail()->resize(80,80*$ratio); ?><?php endif; ?>" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></a>
+    <?php else: ?>
+        <span class="product-image"><img src="<?php if($aspect_ratio):?><?php echo $this->getProductThumbnail()->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);?><?php else: ?><?php echo $this->getProductThumbnail()->resize(80,80*$ratio); ?><?php endif; ?>" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></span>
+    <?php endif; ?>
+    <div class="product-details">
+        <p class="product-name">
+            <?php if ($this->hasProductUrl()): ?>
+                <a href="<?php echo $this->getProductUrl() ?>">
+            <?php endif; ?>
+                <?php echo $this->htmlEscape($this->getProductName()) ?>
+            <?php if ($this->hasProductUrl()): ?>
+                </a>
+            <?php endif; ?>
+        </p>
+        <?php if ($_options = $this->getOptionList()):?>
+        <div class="option-detail">
+            <dl class="item-options">
+                <?php foreach ($_options as $_option) : ?>
+                <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
+                <dd>
+                    <?php if (is_array($_option['value'])): ?>
+                    <?php echo nl2br(implode("\n", $_option['value'])) ?>
+                    <?php else: ?>
+                    <?php echo $_option['value'] ?>
+                    <?php endif; ?>
+                </dd>
+                <?php endforeach; ?>
+            </dl>
+            <a href="#" onclick="return false;" class="details"><?php echo $this->__('Details') ?></a>
+        </div>
+        <?php endif; ?>
+
+
+        <?php
+            $delete_url=$this->getDeleteUrl();
+            if(strpos($delete_url,'uenc')>-1)
+                $delete_url=substr($delete_url,0,strpos($delete_url,'uenc')-1);
+        ?>
+        <a href="<?php echo $delete_url ?>" title="<?php echo $this->__('Remove This Item') ?>" onclick="return confirm('<?php echo $this->__('Möchten Sie diesen Künstler tatsächlich aus Ihrer Anfragen-Liste entfernen?') ?>');" class="btn-remove"><i class="icon-cancel"></i></a>
+    </div>
+    <div class="clearer"></div>
+</li>

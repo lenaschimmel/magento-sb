@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>Porto</title>
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+
+<?php 
+
+$obj = Mage::getModel('catalog/product');
+$_product = $obj->load($_GET['id']); 
+
+
+?>		
+
+	</head>
+	<body>
+
+		<div class="body">
+
+			<div role="main" class="main">
+
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-9">
+                            <h1><?php echo $_product->getName(); ?><strong> bewerten</strong></h1>
+                            <p class="large-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla non pulvinar. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut eu risus enim,. <span class="shadows-text">metus.</span></p>
+						</div>
+
+						<div class="col-md-3">
+                            <div class="bordered-image right">
+                                <img src="<?php echo $_product->getImageUrl();  ?>" width="214" height="214">
+                            </div>
+						</div>
+					</div>
+					<hr class="tall" />
+                    <section class="register-form">
+                        <form action="#">
+                            <div class="field-group one">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span class="blue-head"><strong>ECKDATEN</strong> zu Ihnen als Veranstalter</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-fields">
+                                            <input class="input-text" type="text" placeholder="Vorname...">
+                                            <input class="input-text" type="text" placeholder="Nachname...">
+                                            <input class="input-text" type="text" placeholder="Optional: Firmenname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-fields two">
+                                            <input class="input-text" type="text" placeholder="E-Mail Adresse...">
+                                            <input class="input-text" type="text" placeholder="Telefon...">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="style-checkbox s-0">
+                                            <input type="checkbox" id="checkbox"><label for="checkbox">Über Neuigkeiten informieren lassen. (Kein Spam, max. 1x pro Woche)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field-group two">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span class="blue-head"><strong>ECKDATEN</strong> ZUM EVENT / AUFTRITT</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-fields">
+                                            <input type="text" placeholder="Art der Veranstaltung...">
+                                            <input type="text" placeholder="Ort der Veranstaltung...">
+                                            <input type="text" placeholder="Datum der Veranstaltung...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="tall" />
+                            <div class="field-group three">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span class="blue-head"><strong>BEWERTUNG</strong> VON THE NEW WAY</span>
+                                    </div>
+                                </div>
+                                <div class="rait-field">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <span class="heading">Qualität</span>
+                                            <p>Wie beurteilen Sie die Qualität der Darbietung?</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select id="backing1b" class="rait-select" name="">
+                                                <option value="1">Mangelhaft</option>
+                                                <option value="2">Ausreichend</option>
+                                                <option value="3">Zufriedenstellend</option>
+                                                <option value="4">Gut</option>
+                                                <option value="5">Sehr Gut</option>
+                                            </select>
+                                            <input type="hidden" value="Bitte bewerten" class="h-val">
+                                            <div class="rateit" data-rateit-backingfld="#backing1b"></div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="rait-name">Bitte bewerten</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="#edit" class="edit-link"><span>Kurztext zu diesem Punkt schreiben</span></a>
+                                            <div class="textarea-show max-lenght-s">
+                                                <textarea placeholder="Bitte formulieren Sie kurz, wieso und warum Sie das Preis-/ Leistungsverhältniswie folgt bewertet haben:" maxlength="200"></textarea>
+                                                <div class="counter-symbols big"><span>0</span>/200</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="tall" />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <span class="heading">Performance</span>
+                                            <p>Wie beurteilen Sie die Performance des Künstlers?</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select id="backing2b" class="rait-select" name="">
+                                                <option value="1">Mangelhaft</option>
+                                                <option value="2">Ausreichend</option>
+                                                <option value="3">Zufriedenstellend</option>
+                                                <option value="4">Gut</option>
+                                                <option value="5">Sehr Gut</option>
+                                            </select>
+                                            <input type="hidden" value="Bitte bewerten" class="h-val">
+                                            <div class="rateit" data-rateit-backingfld="#backing2b"></div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="rait-name">Bitte bewerten</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="#edit" class="edit-link"><span>Kurztext zu diesem Punkt schreiben</span></a>
+                                            <div class="textarea-show max-lenght-s">
+                                                <textarea placeholder="Bitte formulieren Sie kurz, wieso und warum Sie das Preis-/ Leistungsverhältniswie folgt bewertet haben:" maxlength="200"></textarea>
+                                                <div class="counter-symbols big"><span>0</span>/200</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="tall" />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <span class="heading">Anklang beim Publikum</span>
+                                            <p>Bewerten Sie kurz, wie das Publikum auf den Künstler reagiert hat.</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select id="backing3b" class="rait-select" name="">
+                                                <option value="1">Mangelhaft</option>
+                                                <option value="2">Ausreichend</option>
+                                                <option value="3">Zufriedenstellend</option>
+                                                <option value="4">Gut</option>
+                                                <option value="5">Sehr Gut</option>
+                                            </select>
+                                            <input type="hidden" value="Bitte bewerten" class="h-val">
+                                            <div class="rateit" data-rateit-backingfld="#backing3b"></div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="rait-name">Bitte bewerten</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="#edit" class="edit-link"><span>Kurztext zu diesem Punkt schreiben</span></a>
+                                            <div class="textarea-show max-lenght-s">
+                                                <textarea placeholder="Bitte formulieren Sie kurz, wieso und warum Sie das Preis-/ Leistungsverhältniswie folgt bewertet haben:" maxlength="200"></textarea>
+                                                <div class="counter-symbols big"><span>0</span>/200</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="tall" />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <span class="heading">Preis/Leistung</span>
+                                            <p>Wie beurteilen Sie die Leistung im Verhältnis zum Preis?</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select id="backing4b" class="rait-select" name="">
+                                                <option value="1">Mangelhaft</option>
+                                                <option value="2">Ausreichend</option>
+                                                <option value="3">Zufriedenstellend</option>
+                                                <option value="4">Gut</option>
+                                                <option value="5">Sehr Gut</option>
+                                            </select>
+                                            <input type="hidden" value="Bitte bewerten" class="h-val">
+                                            <div class="rateit" data-rateit-backingfld="#backing4b"></div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="rait-name">Bitte bewerten</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="#edit" class="edit-link"><span>Kurztext zu diesem Punkt schreiben</span></a>
+                                            <div class="textarea-show max-lenght-s">
+                                                <textarea placeholder="Bitte formulieren Sie kurz, wieso und warum Sie das Preis-/ Leistungsverhältniswie folgt bewertet haben:" maxlength="200"></textarea>
+                                                <div class="counter-symbols big"><span>0</span>/200</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="radio-block">
+                                                <div class="row">
+                                                     <div class="col-md-6">
+                                                         <span class="heading">Weiterempfehlung</span>
+                                                            <p>Würden Sie den Künstler an Freunde und Bekannte weiterempfehlen?</p>
+                                                     </div>
+                                                     <div class="col-md-6">
+                                                        <div class="style-radio">
+                                                            <label><input type="radio" name="name" value="" checked="">Ja</label>
+                                                            <label class="no"><input type="radio" name="name" value="">Nein</label>
+                                                        </div>
+                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                        <div class="textarea-block">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span class="heading">PERSÖNLICHE BEURTEILUNG</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="textarea-container max-lenght-s">
+                                                        <textarea id="counter-big" placeholder="Beschreiben Sie Ihre Erfahrungen gerne in Fließtext,..." maxlength="600"></textarea>
+                                                        <div class="counter-symbols big"><span>0</span>/600</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <i class="icon warning"></i>
+                                                    <p>Berücksichtigen Sie bei der Wortwahl,
+                                                        dass Ihr Feedback evtl. auf dem
+                                                        Bewertungs-Profil von Mustermann
+                                                        Künstler veröffentlicht wird.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <hr class="tall" />
+                    </section>
+                    <section class="login-block">
+                        <div class="row">
+                            <div class="col-md-10">
+                            <form action="#">
+                                <div class="col-md-12">
+                                    <span class="blue-head">
+                                        Bereits registriert?<br>
+                                        <strong>LOGINDATEN</strong> FÜR SMARBOO
+                                    </span>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="text-fields">
+                                        <input type="text" placeholder="Benutzername...">
+                                        <input type="text" placeholder="Passwort...">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="submit" class="blue-buton" value="Bewertung absenden">
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+			
+		</div>
+
+
+	</body>
+</html>
+

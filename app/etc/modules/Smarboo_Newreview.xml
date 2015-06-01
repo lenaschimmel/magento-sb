@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <Smarboo_Newreview>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Smarboo_Newreview>
+    </modules>    
+</config>

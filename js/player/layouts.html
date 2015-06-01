@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+
+
+
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="mediaelement/mediaelementplayer.min.css" />
+	<link rel="stylesheet" href="css/perfect-scrollbar.min.css" />
+	<link rel="stylesheet" href="css/demo.css" />
+	<link rel="stylesheet" href="css/vimuse-dark.css" />
+
+
+</head>
+<body>
+
+
+
+
+			<div id="playlist-right"></div>
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="mediaelement/mediaelement-and-player.min.js"></script>
+	<script src="js/jquery-ui-1.11.2.sortable.min.js"></script>
+	<script src="js/jquery.ui.touch-punch-improved.js"></script>
+	<script src="js/jquery.hammer-full.min.js"></script>
+	<script src="js/perfect-scrollbar.min.js"></script>
+	<script src="js/jquery.vimuse.min.js"></script>
+	<script>
+
+
+		$('#playlist-right').vimuse({
+			playlistPosition: 'right',
+			getID3Info: true,
+			showPlaylistThumbs: true,
+			enableCache: false,
+			pullRadioStreamCover: true,
+			playlistURL: 'demo-regular.json'
+		});
+
+	</script>
+</body>
+</html>

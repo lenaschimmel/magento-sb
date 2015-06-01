@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+	<Smarboo_Newreview>
+	    <version>0.1.0</version>
+	</Smarboo_Newreview>	
+    </modules>
+
+    <frontend>
+	<routers>
+	    <Smarboo_Newreview>
+		<use>standard</use>
+		<args>
+		    <module>Smarboo_Newreview</module>
+		    <frontName>newreview</frontName>
+		</args>
+	    </Smarboo_Newreview>
+	</routers>
+	<layout>
+	    <updates>
+		<newreview>
+		    <file>newreview.xml</file>
+		</newreview>
+	    </updates>
+	</layout>
+    </frontend>	
+</config>

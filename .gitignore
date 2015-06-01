@@ -1,1 +1,12 @@
 /app/etc/local.xml
+.cache
+cache.cfg
+var/session/
+var/cache
+var/export
+var/report
+var/tmp
+tmp
+cache
+.thumbs
+media/catlog/

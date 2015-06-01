@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <default>
+	<reference name="head">
+	    <action method="addJs"><script>smartwave/jquery/jquery-1.10.2.min.js</script></action>
+     	    <action method="addJs"><script>newreview/vendor/rateit/js/jquery.rateit.js</script></action>
+	    <action method="addJs"><script>newreview/vendor/jquery.textchange/jquery.textchange.js</script></action>
+ 	    <action method="addJs"><script>newreview/vendor/jquery.formstyler/js/jquery.formstyler.js</script></action>
+	    <action method="addJs"><script>newreview/js/custom.js</script></action>
+	    <action method="addItem"><type>js_css</type><name>newreview/vendor/rateit/css/rateit.css</name></action>
+	    <action method="addItem"><type>js_css</type><name>newreview/css/theme.css</name></action>
+	</reference>
+    </default>
+</layout>
