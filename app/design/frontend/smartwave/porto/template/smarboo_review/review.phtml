@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>Porto</title>
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+
+<?php 
+
+$obj = Mage::getModel('catalog/product');
+$_product = $obj->load($_GET['id']); 
+
+?>		
+
+
+
+	</head>
+	<body>
+
+		<div class="body">
+
+<div class="row">
+<div class="tabs">
+<ul>
+  <li><a href="../<?php echo $_product->getUrlPath(); ?>">Profil</a></li>
+  <li class="active"><a href="#">Bewertungen ansehen</a></li>
+  <li><a href="../review/new?id=<?php echo $_product->getId();?>">Bewertung abgeben</a></li>
+</ul>
+<div class="tab-content">
+</div>
+</div>
+</div>
+    <div role="main" class="main">
+	<div class="container">
+	    <div class="row">
+
+		<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                    <img src="<?php echo $_product->getImageUrl();  ?>" width="100%">
+		    <div class="rating-summary-box">
+			<div class="rating-summary">4,77 von 5</div>
+			<div class="rateit rating-summary" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+			<div class="rating-summary rating-text-summary">SEHR GUT</div>
+			<div class="rating-summary">41 Bewertungen</div>
+			<div class="horizontal-line"></div>
+			<a href="../review/new?id=<?php echo $_product->getId();?>" class="rating-summary-button"> Jetzt bewerten</a>
+		    </div>
+		</div>
+
+		<div class="col-lg-4 col-md-4 col-sm-9 col-xs-12">
+
+                    <div class="rating-heading"><?php echo $_product->getName(); ?></div>
+                    <div class="rating-post-heading"> <?php echo $_product->getResource()->getAttribute('band_genres_types')->getFrontend()->getValue($_product) ?></div>
+		    <div class="rating-description"><?php echo $_product->getShortDescription(); ?></div>
+		</div>
+	   	
+		<div class="col-lg-6 col-md-6 col-sm-9 col-xs-12">
+		    <div class=" box-review">
+			<div class="row box-review-row">
+				<div class="col-md-6 col-sm-6 col-xs-5"><p class="align-middle">Qualität</p></div>
+				<div class="col-md-4 col-sm-4 col-xs-5">
+					<div class="rateit" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true" ></div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2"><p class="align-middle">4,5</p></div>
+			</div>
+			<div class="row box-review-row">
+				<div class="col-md-6 col-sm-6 col-xs-5"><p class="align-middle">Performance</p></div>
+				<div class="col-md-4 col-sm-4 col-xs-5">
+					<div class="rateit" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2"><p class="align-middle">4,5</p></div>
+			</div>
+			<div class="row box-review-row">
+				<div class="col-md-6 col-sm-6 col-xs-5"><p class="align-middle">Anklang beim Publikum</p></div>
+				<div class="col-md-4 col-sm-4 col-xs-5">
+					<div class="rateit" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2"><p class="align-middle">4,5</p></div>
+			</div>
+			<div class="row box-review-row">
+				<div class="col-md-6 col-sm-6 col-xs-5"><p class="align-middle">Preis/Leistung</p></div>
+				<div class="col-md-4 col-sm-4 col-xs-5">
+					<div class="rateit" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2"><p class="align-middle">4,5</p></div>
+			</div>			
+		    </div>
+		</div>
+		
+		<div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
+			<div class="row box-review margin-top">
+				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+					<div class="row review-title" >Super Stimmung auf unserer Hochzeit</div>
+					<div class="row">
+						<span class="review-meta-info">Veranstaltung:&nbsp;<b>Hochzeit</b></span>
+						<span class="review-meta-info">Ort&nbsp;der&nbsp;Veranstaltung:&nbsp;<b>Braunschweig</b></span>
+						<span class="review-meta-info">Veranstaltungsdatum:&nbsp;<b>22.05.2015</b></span>
+					</div>
+					<div class="row">
+						<div class="review-divider"></div>
+						<div class="row box-review-row">
+							<div class="col-md-6 col-sm-5 col-xs-5"><p class="align-middle">Qualität</p></div>
+							<div class="col-md-4 col-sm-5 col-xs-5">
+								<div class="rateit" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true" ></div>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2"><p class="align-middle">4,5</p></div>
+						</div>
+						<div class="row box-review-row">
+							<div class="col-md-6 col-sm-5 col-xs-5"><p class="align-middle">Performance</p></div>
+							<div class="col-md-4 col-sm-5 col-xs-5">
+								<div class="rateit" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2"><p class="align-middle">4,5</p></div>
+						</div>
+						<div class="row box-review-row">
+							<div class="col-md-6 col-sm-5 col-xs-5"><p class="align-middle">Anklang beim Publikum</p></div>
+							<div class="col-md-4 col-sm-5 col-xs-5">
+								<div class="rateit" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2"><p class="align-middle">4,5</p></div>
+						</div>
+						<div class="row box-review-row">
+							<div class="col-md-6 col-sm-5 col-xs-5"><p class="align-middle">Preis/Leistung</p></div>
+							<div class="col-md-4 col-sm-5 col-xs-5">
+								<div class="rateit" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2"><p class="align-middle">4,5</p></div>
+						</div>		
+					</div>
+					<div class="row review-text">
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</div>
+
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+					    <div class="rating-summary-box">
+						<div class="rating-summary">4,77 von 5</div>
+						<div class="rateit rating-summary" data-rateit-value="4.5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+						<div class="rating-summary rating-text-summary">SEHR GUT</div>
+						<div class="horizontal-line"></div>
+					    </div>
+					
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+					    <div class="rating-summary-box">
+							<div class="rating-summary">Weiterempfehlung:</div>
+							<div class="rating-summary">
+								<img src="http://testsystem.provenartist.de/js/newreview/img/like.png"/>							
+							</div>
+					    </div>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+	    </div>
+					<hr class="tall" />
+                    <section class="register-form">
+
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+			
+		</div>
+
+
+	</body>
+</html>
+

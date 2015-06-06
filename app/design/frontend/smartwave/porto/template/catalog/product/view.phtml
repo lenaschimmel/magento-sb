@@ -20,11 +20,17 @@
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
-<ul class="product-tabs">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
+<div class="row">
+<div class="tabs">
+<ul>
+  <li class="active"><a href="../<?php echo $_product->getUrlPath(); ?>">Profil</a></li>
+  <li><a href="../review?id=<?php echo $_product->getId();?>">Bewertungen ansehen</a></li>
+  <li><a href="../review/new?id=<?php echo $_product->getId();?>">Bewertung abgeben</a></li>
 </ul>
+<div class="tab-content">
+</div>
+</div>
+</div>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="product-view <?php if($move_product_tab): ?>moved-tab<?php endif;?>" <?php if($enabled_richsnippets): ?><?php echo $helper_richsnippets->getProductItemscope(); ?><?php endif; ?>>
     <div class="product-essential">
@@ -163,11 +169,11 @@ if($enable_addtocart_sticky){
                         <div class="std" <?php if($enabled_richsnippets): ?>itemprop="description"<?php endif; ?>><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
 			<br>
 			<div class="band_info"><b><?php echo $_product->getResource()->getAttribute('band_genres_types')->getFrontend()->getValue($_product) ?></b></div>
-			<div class="band_info"><b><?php echo $_helper->productAttribute($_product, $_product->getBand_postcode(), 'band_postcode')." ".$_helper->productAttribute($_product, $_product->getBand_city(), 'band_city') ?></b></div><br>
+			<div class="band_info"><b><?php echo $_helper->productAttribute($_product, $_product->getBand_postcode(), 'band_postcode')." ".$_helper->productAttribute($_product, $_product->getBand_city(), 'band_city')." (". $_helper->productAttribute($_product, $_product->getBand_bundesland(), 'band_bundesland').")"?> </b></div><br>
 			<div class="band_info"><b>Gage: <?php if($_product->getAttributeText('band_price_group')) echo $_helper->productAttribute($_product, $_product->getAttributeText('band_price_group'), 'band_price_grop'); else echo "auf Anfrage" ?></b>
 
 <br><br>
-<a href="../newreview?id=<?php echo $_product->getId();?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?> bewerten</a>
+<a href="../review/new?id=<?php echo $_product->getId();?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?> bewerten</a>
 </div>
                     </div>
                 <?php endif;?>

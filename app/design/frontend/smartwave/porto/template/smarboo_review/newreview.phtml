@@ -28,7 +28,17 @@ $_product = $obj->load($_GET['id']);
 	<body>
 
 		<div class="body">
-
+<div class="row">
+<div class="tabs">
+<ul>
+  <li><a href="../<?php echo $_product->getUrlPath(); ?>">Profil</a></li>
+  <li><a href="../review?id=<?php echo $_product->getId();?>">Bewertungen ansehen</a></li>
+  <li class="active"><a href="#">Bewertung abgeben</a></li>
+</ul>
+<div class="tab-content">
+</div>
+</div>
+</div>
 			<div role="main" class="main">
 
 

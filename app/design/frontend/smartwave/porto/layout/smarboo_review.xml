@@ -10,6 +10,36 @@
 	    <action method="addJs"><script>newreview/js/custom.js</script></action>
 	    <action method="addItem"><type>js_css</type><name>newreview/vendor/rateit/css/rateit.css</name></action>
 	    <action method="addItem"><type>js_css</type><name>newreview/css/theme.css</name></action>
+	    <action method="addItem"><type>js_css</type><name>newreview/css/custom.css</name></action>
 	</reference>
+
     </default>
+
+    <review_index_index>
+	<reference name="breadcrumbs">
+	    <action method="addCrumb">
+		<crumbname>Home</crumbname>
+		<crumbinfo>
+		    <label>Home</label>
+		    <title>Zur Startseite</title>
+		    <link>/</link>
+		</crumbinfo>
+	    </action>
+	</reference>
+    </review_index_index>
+
+    <review_new_index>
+	<reference name="breadcrumbs">
+	    <action method="addCrumb">
+		<crumbname>Home</crumbname>
+		<crumbinfo>
+		    <label>Home</label>
+		    <title>Zur Startseite</title>
+		    <link>/</link>
+		</crumbinfo>
+	    </action>
+	</reference>
+    </review_new_index>
 </layout>
+
+

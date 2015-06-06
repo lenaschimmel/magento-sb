@@ -2,9 +2,9 @@
  
 <config>
     <modules>
-        <Smarboo_Newreview>
+        <Smarboo_Review>
             <active>true</active>
             <codePool>local</codePool>
-        </Smarboo_Newreview>
+        </Smarboo_Review>
     </modules>    
 </config>

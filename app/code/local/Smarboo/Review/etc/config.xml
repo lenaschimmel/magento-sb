@@ -2,26 +2,26 @@
 
 <config>
     <modules>
-	<Smarboo_Newreview>
+	<Smarboo_Review>
 	    <version>0.1.0</version>
-	</Smarboo_Newreview>	
+	</Smarboo_Review>	
     </modules>
 
     <frontend>
 	<routers>
-	    <Smarboo_Newreview>
+	    <Smarboo_Review>
 		<use>standard</use>
 		<args>
-		    <module>Smarboo_Newreview</module>
-		    <frontName>newreview</frontName>
+		    <module>Smarboo_Review</module>
+		    <frontName>review</frontName>
 		</args>
-	    </Smarboo_Newreview>
+	    </Smarboo_Review>
 	</routers>
 	<layout>
 	    <updates>
-		<newreview>
-		    <file>newreview.xml</file>
-		</newreview>
+		<Review>
+		    <file>smarboo_review.xml</file>
+		</Review>
 	    </updates>
 	</layout>
     </frontend>	
